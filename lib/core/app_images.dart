@@ -1,16 +1,15 @@
 class AppImages {
-
   static String get logo => "assets/images/logo.png";
-  static String get logo_icon => "assets/images/logo_icon.png";
+  static String get logoIcon => "assets/images/logoIcon.png";
   static String get person => "assets/images/person.jpg";
-  static String get logo_login => "assets/images/login_logo.png";
+  static String get logoLogin => "assets/images/login_logo.png";
   static String get cart => "assets/images/cart.png";
 
-  static String get bg_producer => "assets/images/bg_producer.png";
+  static String get bgProducer => "assets/images/bgProducer.png";
   static String get carrots => "assets/images/carrots.png";
-  static String get vegetables_package => "assets/images/cesta_orgnicos.jpg";
+  static String get vegetablesPackage => "assets/images/cesta_orgnicos.jpg";
   static String get fruits => "assets/images/fruits.png";
-  static String get package_details => "assets/images/package_details.png";
+  static String get packageDetails => "assets/images/packageDetails.png";
   static String get vegetables => "assets/images/vegetables.png";
   static String get star => "assets/images/star.png";
 

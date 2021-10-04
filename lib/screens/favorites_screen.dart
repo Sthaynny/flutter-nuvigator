@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:proj/components/orgs_drawer.dart';
 import 'package:proj/components/orgs_stores_card.dart';
 import 'package:proj/core/app_colors.dart';
-import 'package:proj/core/app_images.dart';
 import 'package:proj/models/producer_model.dart';
 import 'package:proj/repository/data.dart';
 import 'package:proj/screens/producer_details_screen.dart';
@@ -29,8 +28,7 @@ class FavoritesScreen extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 26,
                         fontWeight: FontWeight.w700,
-                        color: AppColors.darkGrey
-                    ),
+                        color: AppColors.darkGrey),
                   ),
                   IconButton(
                     color: Colors.transparent,
@@ -49,7 +47,6 @@ class FavoritesScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 30),
-
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
@@ -68,9 +65,9 @@ class FavoritesScreen extends StatelessWidget {
                   },
                 ),
               )
-              ],
-            ),
+            ],
           ),
+        ),
       ),
     );
   }
@@ -80,14 +77,14 @@ class FavoritesScreen extends StatelessWidget {
     final data = await Data.getJson();
     final producers = data["producers"];
 
-    for(final producer in producers.keys) {
-
+    for (final producer in producers.keys) {
       final prod = Producer.fromJson(producers[producer]);
 
       children.add(OrgsStoresCard(
         action: () => Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => ProducerDetailsScreen(producer: prod)),
+          MaterialPageRoute(
+              builder: (context) => ProducerDetailsScreen(producer: prod)),
         ),
         img: prod.logo,
         distance: prod.distance,

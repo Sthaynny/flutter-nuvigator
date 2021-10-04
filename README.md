@@ -1,51 +1,96 @@
-![Thumbnail GitHub](thumb.png)
+<p align="center">
+   <img src="https://user-images.githubusercontent.com/46109133/123522224-67349280-d692-11eb-9cda-1597b3826b67.png" alt="dt money" width="200"/>
+</p>
 
-# E-commerce Orgs
+<p align="center">
+   <a href="https://www.linkedin.com/in/igor-sthaynny/">
+      <img alt="Igor Sthaynny" src="https://img.shields.io/badge/-Sthaynny-5965e0?style=flat&logo=Linkedin&logoColor=white" />
+   </a>
+  <img alt="Languages" src="https://img.shields.io/github/languages/count/Sthaynny/flutter-nuvigator?color=%235963C5" />
+  <img alt="lastcommit" src="https://img.shields.io/github/last-commit/Sthaynny/flutter-nuvigator?color=%235761C3" />
+  <img alt="License" src="https://img.shields.io/github/license/Sthaynny/flutter-nuvigator?color=%235E69D7" />
+  <img alt="Issues" src="https://img.shields.io/github/issues/Sthaynny/flutter-nuvigator?color=%235965E0">
+  <a href="mailto:igorsthaynny@gmail.com">
+   <img alt="E-mail" src="https://img.shields.io/badge/-igorsthaynny%40gmail.com-%23525DCB" />
+  </a>
+</p>
 
-App que simula um e-commerce de produtos naturais para o curso de navegação e rotas com nuvigator através do Flutter e Dart.
+<p align="center">
+  📰 ig.news is a blog where you can stay on top of the latest news about the React world.
+</p>
 
-## 🔨 Funcionalidades do projeto
+<p align="center">Project developed to study Flutter</p>
 
-O app lista cestas, produtores e itens das cestas com imagem, título, descrição e valor. Os dados são obtidos através de um arquivo `json`. Também está implementado um esquema de rotas que funciona com o modelo de pilha e o app dispõe de menu hamburger e várias telas. Tudo isso organizado, facilmente personalizável e reaproveitável através da componentização e separação das responsabilidades entre models, components, screens, repositories e afins.
+<hr />
 
-![](ecommerce_orgs.gif)
+- `rootBundle`: reading data from a json file
+- `componentization`: the project's custom components are in the folder "components or widgets"
+- `color centering`: all as cores used in the app limit a file called app_colors which increases the customization power without much impact on the code logic.
+- `image centering`: all the images used in the app come from a file called app_images which increases the customization power without much impact on the code logic.
+- `nuvigator`: use of the library called [nuvigator](https://github.com/nubank/nuvigator) which allows us to manipulate the flow of routes, parameters, nested navigation and the like.
 
-## ✔️ Técnicas e tecnologias utilizadas
+<div align="center">
+  <sub> Made with 💖 by
+    <a href="https://github.com/Sthaynny">Igor Sthaynny
+  </sub>
+</div>
 
-- `rootBundle`: leitura de dados vindos de um arquivo json
-- `componentização`: os componentes personalizados do projeto encontram-se na pasta "components"
-- `centralização de cores`: todas as cores utilizadas no app vêm de um arquivo chamado app_colors que aumenta o poder de personalização sem grande impacto na lógica do código.
-- `centralização de imagens`: todas as imagens utilizadas no app vêm de um arquivo chamado app_images que aumenta o poder de personalização sem grande impacto na lógica do código.
-- `nuvigator` nas branches a partir da aula_2 utilizamos uma biblioteca chamada [nuvigator](https://github.com/nubank/nuvigator) que nos possibilita manipular o fluxos das rotas, parâmetros, navegação aninhada e afins.
- 
-## 📁 Acesso ao projeto
+# 📌 Contents
 
-O acesso ao projeto está separado da seguinte forma:
+- [📌 Contents](#-contents)
+- [:camera: Screenshots](#camera-screenshots)
+- [:rocket: Technologies](#rocket-technologies)
+- [:computer: How to run](#computer-how-to-run)
+- [:bug: Issues](#bug-issues)
+- [:sparkles: Contributing](#sparkles-contributing)
+- [:page_facing_up: License](#page_facing_up-license)
+
+# :camera: Screenshots
+<div align="center">
+   <img src="./.github/home.png" width="400px">
+   <img src="./.github/posts.png" width="400px">
+   <img src="./.github/checkout.png" width="400px">
+   <img src="./.github/post.png" width="400px">
+</div>
+   
+
+# :rocket: Technologies
+This project was made using the follow technologies:
+
+* [Flutter](https://flutter.dev/)
+* [Dart](https://dart.dev/)
+* [Firebase](https://firebase.google.com/)
+
+# :computer: How to run
+
+```bash
+# Clone Repository
+$ git clone https://github.com/Sthaynny/flutter-nuvigator.git && cd flutter-nuvigator
+
+# Install Dependencies
+$ flutter pub get
+
+# Fill .env.local file with YOUR environment variables, according to .env.example file.
+
+# Run Aplication
+$ flutter run
 ```
-start
-├── aula_1
-├── aula_2
-├── aula_3
-├── start_nested
-├── aula_4
-└── main
-```
+Go to device or web to see the application running.
 
-A branch [start](https://github.com/Leomhl/flutter-nuvigator/tree/start) é o ponto de partida do repositório, é partindo dela que desenvolveremos a aula_1. Por sua vez, a aula_2 é uma continuação da aula_1 e assim vai sucessivamente. A branch main é a final, nela você encontra o código final criado no curso até a aula_4.
+# :bug: Issues
 
-Você pode [baixar](https://github.com/Leomhl/flutter-nuvigator/archive/refs/heads/start.zip) o zip com o código inicial do projeto.
+Create a <a href="https://github.com/Sthaynny/flutter-nuvigator/issues">new issue report</a>, it will be an honor to be able to help you solve and further improve our application.
 
-## 🛠️ Abrir e rodar o projeto
+# :sparkles: Contributing
 
-**Para executar este projeto você precisa:**
+This project follows the Angular Convention commits pattern. [Click](./commitlint.config.js) to see the available prefixes.
 
-- Ter o [Flutter](https://flutter.dev/docs/get-started/install) instalado na sua máquina
-- Ter algum editor de códigos ou IDE como o [Android Studio](https://developer.android.com/studio) ou [Intellij Idea](https://www.jetbrains.com/pt-br/idea/download/). 
+- Fork this repository;
+- Create a new branch to develop your feature: `git checkout -b my-feature`;
+- Commit your changes: `git commit -m 'feat: my new feature'`;
+- Push to your branch: `git push origin my-feature`.
 
-Caso opte por IDEs como as duas sugeridas acima, o processo de execução do aplicativo funcionará através de um botão de play na parte superior que ambas dispõem. Caso escolha rodar o projeto via linha de comandos, utilize o comando `flutter run`. Lembre-se de antes de executar o comando de navegar até a pasta do projeto antes. 
+# :page_facing_up: License
 
-Para mais instruções sobre a configuração do ambiente, recomendamos a leitura do artigo [Flutter - Como configurar o ambiente de desenvolvimento](https://www.alura.com.br/artigos/flutter-como-configurar-o-ambiente-de-desenvolvimento). Caso tenha desejo de obter conhecimento além dos cursos da [Formação Flutter](https://www.alura.com.br/formacao-flutter), recomendamos os livros [Iniciando com Flutter Framework](https://www.casadocodigo.com.br/products/livro-flutter) e [Aprofundando em Flutter](https://www.casadocodigo.com.br/products/livro-aprofundando-flutter) da editora [Casa do código](https://www.casadocodigo.com.br/).
-
-## 📚 Mais informações do curso
-
-O curso de nuvigator tem o foco em ensinar como manipular as rotas de um aplicativo Flutter primeiramente com os mecanismos nativos, pilha e nomeada. Após aprendermos estas formas, migramos para a utilização da biblioteca [nuvigator](https://github.com/nubank/nuvigator) que proporciona uma forma muito mais rápida e com menos código para criar e gerenciar rotas nomeadas. Aprendemos como criar um nuvigator anônimo, instanciado, personalizar rotas, passagens de parâmetros e navegação aninhada (nested navigation).
+This project is under the [MIT License](./LICENSE) |
+Made with 💖 by [Igor Sthaynny](https://www.linkedin.com/in/igor-sthaynny/).

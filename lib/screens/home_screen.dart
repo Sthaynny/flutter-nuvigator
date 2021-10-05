@@ -10,6 +10,8 @@ import 'package:flutter_nuvigator/core/app_images.dart';
 import 'package:flutter_nuvigator/models/producer_model.dart';
 import 'package:flutter_nuvigator/repository/data.dart';
 import 'package:flutter_nuvigator/router/router_generator.dart';
+import 'package:flutter_nuvigator/utils/string_export.dart';
+import 'package:nuvigator/next.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -141,9 +143,11 @@ class _HomeScreenState extends State<HomeScreen> {
       final prod = Producer.fromJson(producers[producer]);
 
       children.add(OrgsStoresCard(
-        action: () => Navigator.of(context).pushNamed(
+        action: () => Nuvigator.of(context).open(
           Routes.producerDetails,
-          arguments: prod,
+          parameters: {
+            StringKeys.producer: prod,
+          },
         ),
         img: prod.logo,
         distance: prod.distance,

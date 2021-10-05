@@ -6,6 +6,7 @@ import 'package:flutter_nuvigator/models/package_model.dart';
 import 'package:flutter_nuvigator/models/producer_model.dart';
 import 'package:flutter_nuvigator/router/router_generator.dart';
 import 'package:flutter_nuvigator/utils/string_export.dart';
+import 'package:nuvigator/next.dart';
 
 class ProducerDetailsScreen extends StatelessWidget {
   final Producer producer;
@@ -112,10 +113,9 @@ class ProducerDetailsScreen extends StatelessWidget {
       final pack = Package.fromJson(package);
 
       children.add(InkWell(
-        onTap: () => Navigator.pushNamed(
-          context,
+        onTap: () => Nuvigator.of(context).open(
           Routes.packageDetails,
-          arguments: {
+          parameters: {
             StringKeys.package: pack,
             StringKeys.producer: producer,
           },

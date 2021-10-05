@@ -3,10 +3,12 @@ import 'package:flutter_nuvigator/components/orgs_menu_card.dart';
 import 'package:flutter_nuvigator/components/orgs_rate_app.dart';
 import 'package:flutter_nuvigator/core/app_colors.dart';
 import 'package:flutter_nuvigator/router/router_generator.dart';
+import 'package:nuvigator/next.dart';
 
 class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final nuvigator = Nuvigator.of(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -28,25 +30,25 @@ class MenuScreen extends StatelessWidget {
               OrgsMenuCard(
                 text: 'Início',
                 icon: Icons.home,
-                action: () => Navigator.pushNamed(context, Routes.home),
+                action: () => nuvigator.open(Routes.home),
               ),
               Divider(),
               OrgsMenuCard(
                 text: 'Favoritos',
                 icon: Icons.favorite,
-                action: () => Navigator.pushNamed(context, Routes.favorites),
+                action: () => nuvigator.open(Routes.favorites),
               ),
               Divider(),
               OrgsMenuCard(
                 text: 'Perfil',
                 icon: Icons.person,
-                action: () => Navigator.pushNamed(context, Routes.profile),
+                action: () => nuvigator.open(Routes.profile),
               ),
               Divider(),
               OrgsMenuCard(
                 text: 'Métodos de pagamento',
                 icon: Icons.credit_card,
-                action: () => Navigator.pushNamed(context, Routes.payment),
+                action: () => nuvigator.open(Routes.payment),
               ),
               Divider(),
               OrgsMenuCard(

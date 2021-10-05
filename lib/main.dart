@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
       // onGenerateRoute: RouterGenerator.generateRoute,
       builder: Nuvigator.routes(
         initialRoute: Routes.home,
+        screenType: materialScreenType,
         routes: [
           NuRouteBuilder(
             path: Routes.home,

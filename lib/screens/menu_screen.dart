@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_nuvigator/components/orgs_menu_card.dart';
 import 'package:flutter_nuvigator/components/orgs_rate_app.dart';
 import 'package:flutter_nuvigator/core/app_colors.dart';
-import 'package:flutter_nuvigator/router/router_generator.dart';
+import 'package:flutter_nuvigator/router/router.dart';
 import 'package:nuvigator/next.dart';
 
 class MenuScreen extends StatelessWidget {

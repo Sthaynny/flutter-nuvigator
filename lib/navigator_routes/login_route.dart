@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_nuvigator/router/routes.dart';
+import 'package:flutter_nuvigator/router/router.dart';
 import 'package:flutter_nuvigator/screens/login_screen.dart';
 import 'package:nuvigator/next.dart';
 
@@ -11,6 +11,7 @@ class LoginRoute extends NuRoute {
         Routes.singUp,
         parameters: parameters,
       ),
+      onHomeClick: nuvigator.open(Routes.home),
     );
   }
 

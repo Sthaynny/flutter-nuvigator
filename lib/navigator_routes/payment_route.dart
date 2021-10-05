@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_nuvigator/router/routes.dart';
+import 'package:flutter_nuvigator/router/router.dart';
 import 'package:flutter_nuvigator/screens/payment_screen.dart';
 import 'package:nuvigator/next.dart';
 

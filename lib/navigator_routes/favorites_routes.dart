@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_nuvigator/router/routes.dart';
+import 'package:flutter_nuvigator/router/router.dart';
 import 'package:flutter_nuvigator/screens/favorites_screen.dart';
 import 'package:nuvigator/next.dart';
 
@@ -15,7 +15,7 @@ class FavoritesRoute extends NuRoute {
   }
 
   @override
-  String get path => Routes.singUp;
+  String get path => Routes.favorites;
 
   @override
   ScreenType get screenType => materialScreenType;

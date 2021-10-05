@@ -9,16 +9,23 @@ import 'package:flutter_nuvigator/core/app_colors.dart';
 import 'package:flutter_nuvigator/core/app_images.dart';
 import 'package:flutter_nuvigator/models/producer_model.dart';
 import 'package:flutter_nuvigator/repository/data.dart';
-import 'package:flutter_nuvigator/router/router_generator.dart';
 import 'package:flutter_nuvigator/utils/string_export.dart';
-import 'package:nuvigator/next.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({
+    Key key,
+    @required this.onProduceDatailsClick,
+  }) : super(key: key);
+
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _HomeScreenState createState() => _HomeScreenState(onProduceDatailsClick);
+  final onProduceDatailsClick;
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  _HomeScreenState(this.onProduceDatailsClick);
+  final onProduceDatailsClick;
+
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> _scaffoldKey =
@@ -143,12 +150,9 @@ class _HomeScreenState extends State<HomeScreen> {
       final prod = Producer.fromJson(producers[producer]);
 
       children.add(OrgsStoresCard(
-        action: () => Nuvigator.of(context).open(
-          Routes.producerDetails,
-          parameters: {
-            StringKeys.producer: prod,
-          },
-        ),
+        action: () => onProduceDatailsClick({
+          StringKeys.producer: prod,
+        }),
         img: prod.logo,
         distance: prod.distance,
         title: prod.name,

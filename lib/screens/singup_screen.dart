@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_nuvigator/core/app_colors.dart';
 import 'package:flutter_nuvigator/core/app_images.dart';
-import 'package:flutter_nuvigator/router/router_generator.dart';
-import 'package:nuvigator/next.dart';
 
 class SingupScreen extends StatelessWidget {
+  final onLoginClick;
+
+  const SingupScreen({
+    Key key,
+    @required this.onLoginClick,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,9 +78,7 @@ class SingupScreen extends StatelessWidget {
               vertical: 10,
             ),
             child: GestureDetector(
-              onTap: () => Nuvigator.of(context).open(
-                Routes.login,
-              ),
+              onTap: () => onLoginClick(),
               child: Container(
                 width: double.maxFinite,
                 padding: const EdgeInsets.all(8),

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:proj/components/orgs_packages_card.dart';
-import 'package:proj/core/app_colors.dart';
-import 'package:proj/core/app_images.dart';
-import 'package:proj/models/package_model.dart';
-import 'package:proj/models/producer_model.dart';
-import 'package:proj/screens/package_details_screen.dart';
+import 'package:flutter_nuvigator/components/orgs_packages_card.dart';
+import 'package:flutter_nuvigator/core/app_colors.dart';
+import 'package:flutter_nuvigator/core/app_images.dart';
+import 'package:flutter_nuvigator/models/package_model.dart';
+import 'package:flutter_nuvigator/models/producer_model.dart';
+import 'package:flutter_nuvigator/router/router_generator.dart';
+import 'package:flutter_nuvigator/utils/string_export.dart';
 
 class ProducerDetailsScreen extends StatelessWidget {
   final Producer producer;
@@ -97,13 +98,13 @@ class ProducerDetailsScreen extends StatelessWidget {
       final pack = Package.fromJson(package);
 
       children.add(InkWell(
-        onTap: () => Navigator.push(
+        onTap: () => Navigator.pushNamed(
           context,
-          MaterialPageRoute(
-              builder: (context) => PackageDetailsScreen(
-                    package: pack,
-                    producer: producer,
-                  )),
+          Routes.packageDetails,
+          arguments: {
+            StringKeys.package: pack,
+            StringKeys.producer: producer,
+          },
         ),
         child: OrgsPackagesCard(
           title: pack.title,

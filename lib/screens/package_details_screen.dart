@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:proj/components/orgs_packages_card.dart';
-import 'package:proj/core/app_colors.dart';
-import 'package:proj/core/app_images.dart';
-import 'package:proj/models/package_model.dart';
-import 'package:proj/models/producer_model.dart';
+import 'package:flutter_nuvigator/components/orgs_packages_card.dart';
+import 'package:flutter_nuvigator/core/app_colors.dart';
+import 'package:flutter_nuvigator/core/app_images.dart';
+import 'package:flutter_nuvigator/models/package_model.dart';
+import 'package:flutter_nuvigator/models/producer_model.dart';
 
 class PackageDetailsScreen extends StatelessWidget {
   final Package package;

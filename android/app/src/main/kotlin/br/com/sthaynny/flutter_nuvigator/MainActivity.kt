@@ -1,4 +1,4 @@
-package com.example.ecommerceorgs.proj
+package br.com.sthaynny.flutter_nuvigator
 
 import io.flutter.embedding.android.FlutterActivity
 

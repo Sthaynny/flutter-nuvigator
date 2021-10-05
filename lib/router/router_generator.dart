@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:proj/core/app_colors.dart';
-import 'package:proj/models/package_model.dart';
-import 'package:proj/models/producer_model.dart';
-import 'package:proj/screens/favorites_screen.dart';
-import 'package:proj/screens/home_screen.dart';
-import 'package:proj/screens/login_screen.dart';
-import 'package:proj/screens/package_details_screen.dart';
-import 'package:proj/screens/payment_screen.dart';
-import 'package:proj/screens/producer_details_screen.dart';
-import 'package:proj/screens/profile_screen.dart';
-import 'package:proj/screens/singup_screen.dart';
+import 'package:flutter_nuvigator/core/app_colors.dart';
+import 'package:flutter_nuvigator/models/producer_model.dart';
+import 'package:flutter_nuvigator/screens/favorites_screen.dart';
+import 'package:flutter_nuvigator/screens/home_screen.dart';
+import 'package:flutter_nuvigator/screens/login_screen.dart';
+import 'package:flutter_nuvigator/screens/package_details_screen.dart';
+import 'package:flutter_nuvigator/screens/payment_screen.dart';
+import 'package:flutter_nuvigator/screens/producer_details_screen.dart';
+import 'package:flutter_nuvigator/screens/profile_screen.dart';
+import 'package:flutter_nuvigator/screens/singup_screen.dart';
+import 'package:flutter_nuvigator/utils/strings/strings_keys.dart';
 
 class Routes {
   static const String home = 'home';
@@ -66,11 +66,11 @@ class RouterGenerator {
         break;
 
       case Routes.packageDetails:
-        if (args is Package) {
+        if (args is Map) {
           return MaterialPageRoute(
             builder: (_) => PackageDetailsScreen(
-              package: args,
-              producer: null,
+              package: args[StringKeys.package],
+              producer: args[StringKeys.producer],
             ),
           );
         }

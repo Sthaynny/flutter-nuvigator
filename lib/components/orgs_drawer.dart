@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proj/screens/menu_screen.dart';
+import 'package:flutter_nuvigator/screens/menu_screen.dart';
 
 class OrgsDrawer extends StatelessWidget {
   @override

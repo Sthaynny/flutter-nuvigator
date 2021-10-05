@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:proj/core/app_colors.dart';
-import 'package:proj/core/app_images.dart';
-
-import 'login_screen.dart';
+import 'package:flutter_nuvigator/core/app_colors.dart';
+import 'package:flutter_nuvigator/core/app_images.dart';
+import 'package:flutter_nuvigator/router/router_generator.dart';
 
 class SingupScreen extends StatelessWidget {
   @override
@@ -73,9 +72,9 @@ class SingupScreen extends StatelessWidget {
               vertical: 10,
             ),
             child: GestureDetector(
-              onTap: () => Navigator.push(
+              onTap: () => Navigator.pushNamed(
                 context,
-                MaterialPageRoute(builder: (context) => LoginScreen()),
+                Routes.login,
               ),
               child: Container(
                 width: double.maxFinite,

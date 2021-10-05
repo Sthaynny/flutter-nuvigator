@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:proj/components/orgs_drawer.dart';
-import 'package:proj/components/orgs_stores_card.dart';
-import 'package:proj/core/app_colors.dart';
-import 'package:proj/models/producer_model.dart';
-import 'package:proj/repository/data.dart';
-import 'package:proj/screens/producer_details_screen.dart';
+import 'package:flutter_nuvigator/components/orgs_drawer.dart';
+import 'package:flutter_nuvigator/components/orgs_stores_card.dart';
+import 'package:flutter_nuvigator/core/app_colors.dart';
+import 'package:flutter_nuvigator/models/producer_model.dart';
+import 'package:flutter_nuvigator/repository/data.dart';
+import 'package:flutter_nuvigator/router/router_generator.dart';
 
 class FavoritesScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
@@ -14,21 +14,23 @@ class FavoritesScreen extends StatelessWidget {
     return Scaffold(
       key: _scaffoldKey,
       drawer: OrgsDrawer(),
-      body: SingleChildScrollView(
+      body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.fromLTRB(20, 50, 20, 0),
+          padding: EdgeInsets.fromLTRB(20, 50, 20, 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'Produtores favoritos',
-                    style: TextStyle(
-                        fontSize: 26,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.darkGrey),
+                  Flexible(
+                    child: Text(
+                      'Produtores favoritos',
+                      style: TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.darkGrey),
+                    ),
                   ),
                   IconButton(
                     color: Colors.transparent,
@@ -41,30 +43,31 @@ class FavoritesScreen extends StatelessWidget {
               Text(
                 'Produtores que você favoritou',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 14,
                   fontWeight: FontWeight.w400,
                   color: Colors.grey,
                 ),
               ),
               SizedBox(height: 30),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                child: FutureBuilder(
-                  future: _generateProducerList(context),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      return Column(
-                        children: snapshot.data,
-                      );
-                    } else {
-                      return Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    }
-                  },
-                ),
-              )
+              FutureBuilder(
+                future: _generateProducerList(context),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Flexible(
+                      flex: 2,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: snapshot.data,
+                        ),
+                      ),
+                    );
+                  } else {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                },
+              ),
             ],
           ),
         ),
@@ -80,16 +83,18 @@ class FavoritesScreen extends StatelessWidget {
     for (final producer in producers.keys) {
       final prod = Producer.fromJson(producers[producer]);
 
-      children.add(OrgsStoresCard(
-        action: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => ProducerDetailsScreen(producer: prod)),
+      children.add(
+        OrgsStoresCard(
+          action: () => Navigator.pushNamed(
+            context,
+            Routes.producerDetails,
+            arguments: prod,
+          ),
+          img: prod.logo,
+          distance: prod.distance,
+          title: prod.name,
         ),
-        img: prod.logo,
-        distance: prod.distance,
-        title: prod.name,
-      ));
+      );
 
       children.add(SizedBox(height: 10));
     }

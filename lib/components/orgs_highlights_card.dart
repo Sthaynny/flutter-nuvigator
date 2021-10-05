@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:proj/core/app_colors.dart';
-import 'package:proj/core/app_images.dart';
+import 'package:flutter_nuvigator/core/app_colors.dart';
+import 'package:flutter_nuvigator/core/app_images.dart';
 
 class OrgsHighlightsCard extends StatelessWidget {
   final String img;

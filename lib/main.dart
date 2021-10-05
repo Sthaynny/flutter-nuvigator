@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proj/router/router_generator.dart';
+import 'package:flutter_nuvigator/router/router_generator.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Montserrat',
       ),
-      initialRoute: Routes.login,
+      initialRoute: Routes.home,
       onGenerateRoute: RouterGenerator.generateRoute,
     );
   }

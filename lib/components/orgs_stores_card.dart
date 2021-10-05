@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proj/core/app_colors.dart';
+import 'package:flutter_nuvigator/core/app_colors.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 class OrgsStoresCard extends StatelessWidget {
@@ -12,10 +12,10 @@ class OrgsStoresCard extends StatelessWidget {
     @required this.img,
     @required this.title,
     this.distance,
-    @required this.action
-  }): assert(img != null),
-      assert(title != null),
-      assert(action != null);
+    @required this.action,
+  })  : assert(img != null),
+        assert(title != null),
+        assert(action != null);
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +24,8 @@ class OrgsStoresCard extends StatelessWidget {
       child: InkWell(
         onTap: action,
         child: Container(
+          alignment: Alignment.centerLeft,
           width: MediaQuery.of(context).size.width,
-          height: 100,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
@@ -44,28 +44,37 @@ class OrgsStoresCard extends StatelessWidget {
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   child: Image.asset(
                     img,
+                    scale: 2,
                   ),
                 ),
-                SizedBox(width: 10,),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700
+                SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w700,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 5,),
-                    SmoothStarRating(
-                      rating: 5,
-                      color: AppColors.green,
-                      borderColor: AppColors.green,
-                      isReadOnly: false,
-                      starCount: 5,
-                    ),
-                  ],
+                      SizedBox(
+                        height: 5,
+                      ),
+                      SmoothStarRating(
+                        rating: 5,
+                        color: AppColors.green,
+                        borderColor: AppColors.green,
+                        isReadOnly: false,
+                        starCount: 5,
+                        size: 20,
+                      ),
+                    ],
+                  ),
                 ),
                 _favoriteOrDistance(distance),
               ],
@@ -77,21 +86,26 @@ class OrgsStoresCard extends StatelessWidget {
   }
 
   _favoriteOrDistance(distance) {
-    if(distance != null)
+    if (distance != null) {
       return Expanded(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Text(
-              'Distância',
-              style: TextStyle(
-                  color: AppColors.darkGrey
-              )
-            ),
-            Text('$distance km')
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Distância',
+                style: TextStyle(
+                  fontSize: 11,
+                  color: AppColors.darkGrey,
+                ),
+              ),
+              Text('$distance km')
+            ],
+          ),
         ),
       );
+    }
 
     return Expanded(
       child: Column(
@@ -101,7 +115,7 @@ class OrgsStoresCard extends StatelessWidget {
           Icon(
             Icons.favorite,
             color: AppColors.green,
-            size: 30,
+            size: 15,
           ),
         ],
       ),

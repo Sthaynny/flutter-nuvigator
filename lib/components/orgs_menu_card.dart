@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proj/core/app_colors.dart';
+import 'package:flutter_nuvigator/core/app_colors.dart';
 
 class OrgsMenuCard extends StatelessWidget {
   final IconData icon;
@@ -10,8 +10,8 @@ class OrgsMenuCard extends StatelessWidget {
     @required this.icon,
     @required this.text,
     @required this.action,
-  }): assert(icon != null),
-      assert(text != null);
+  })  : assert(icon != null),
+        assert(text != null);
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +36,8 @@ class OrgsMenuCard extends StatelessWidget {
             ),
             SizedBox(width: 20),
             Text(
-             text,
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w400
-              ),
+              text,
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
             )
           ],
         ),

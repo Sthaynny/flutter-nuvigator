@@ -21,7 +21,10 @@ class ProducerDetailsScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         title: Text(
           'Detalhe da empresa',
-          style: TextStyle(fontWeight: FontWeight.w700),
+          style: TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: 14,
+          ),
         ),
       ),
       body: Column(
@@ -50,14 +53,14 @@ class ProducerDetailsScreen extends StatelessWidget {
                         child: Text(
                       producer.name,
                       style: TextStyle(
-                        fontSize: 25,
+                        fontSize: 16,
                         fontWeight: FontWeight.w700,
                       ),
                     )),
                     Text(
                       '${producer.distance} km',
                       style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 13,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -68,25 +71,36 @@ class ProducerDetailsScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-            child: Text(producer.description,
-                style: TextStyle(color: AppColors.darkGrey, fontSize: 18)),
+            child: Text(
+              producer.description,
+              style: TextStyle(
+                color: AppColors.darkGrey,
+                fontSize: 12,
+              ),
+            ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+            padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
             child: Text(
               'Cestas',
               style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 25,
+                fontSize: 18,
               ),
             ),
           ),
           Expanded(
-              child: Padding(
-            padding: EdgeInsets.fromLTRB(20, 5, 20, 0),
-            child: ListView(
-                children: _generatePackageList(context, producer.packages)),
-          )),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: _generatePackageList(
+                  context,
+                  producer.packages,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

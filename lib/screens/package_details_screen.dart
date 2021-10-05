@@ -24,7 +24,10 @@ class PackageDetailsScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         title: Text(
           'Detalhe da cesta',
-          style: TextStyle(fontWeight: FontWeight.w700),
+          style: TextStyle(
+            fontWeight: FontWeight.w700,
+            fontSize: 14,
+          ),
         ),
       ),
       body: Column(
@@ -44,14 +47,14 @@ class PackageDetailsScreen extends StatelessWidget {
                     child: Text(
                   package.title,
                   style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 18,
                     fontWeight: FontWeight.w700,
                   ),
                 )),
                 Text(
                   '${producer.distance} km',
                   style: TextStyle(
-                    fontSize: 15,
+                    fontSize: 12,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
@@ -83,7 +86,9 @@ class PackageDetailsScreen extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(20, 15, 20, 0),
             child: Text(
               producer.description,
-              style: TextStyle(),
+              style: TextStyle(
+                fontSize: 12,
+              ),
             ),
           ),
           Padding(
@@ -91,7 +96,7 @@ class PackageDetailsScreen extends StatelessWidget {
             child: Text(
               'R\$ ${package.price}',
               style: TextStyle(
-                fontSize: 25,
+                fontSize: 15,
                 fontWeight: FontWeight.w700,
                 color: AppColors.green,
               ),
@@ -117,14 +122,16 @@ class PackageDetailsScreen extends StatelessWidget {
               'Itens da cesta',
               style: TextStyle(
                 fontWeight: FontWeight.w700,
-                fontSize: 25,
+                fontSize: 18,
               ),
             ),
           ),
           Expanded(
               child: Padding(
-            padding: EdgeInsets.fromLTRB(20, 5, 20, 0),
-            child: ListView(children: _generatePackageItems(package)),
+            padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
+            child: ListView(
+              children: _generatePackageItems(package),
+            ),
           )),
         ],
       ),
@@ -135,7 +142,9 @@ class PackageDetailsScreen extends StatelessWidget {
     List<Widget> children = [];
 
     for (final item in package.items) {
-      children.add(OrgsPackagesCard(description: "", title: item, price: null));
+      children.add(
+        OrgsPackagesCard(description: "", title: item, price: null),
+      );
     }
 
     return children;

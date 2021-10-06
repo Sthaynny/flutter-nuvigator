@@ -6,13 +6,13 @@
    <a href="https://www.linkedin.com/in/igor-sthaynny/">
       <img alt="Igor Sthaynny" src="https://img.shields.io/badge/-Sthaynny-5965e0?style=flat&logo=Linkedin&logoColor=white" />
    </a>
-  <img alt="Languages" src="https://img.shields.io/github/languages/count/Sthaynny/flutter_nuvigator_nested?color=%235963C5" />
-  <img alt="lastcommit" src="https://img.shields.io/github/last-commit/Sthaynny/flutter_nuvigator_nested?color=%235761C3" />
-  <img alt="License" src="https://img.shields.io/github/license/Sthaynny/flutter_nuvigator_nested?color=%235E69D7" />
-  <img alt="Issues" src="https://img.shields.io/github/issues/Sthaynny/flutter_nuvigator_nested?color=%235965E0">
+  <img alt="Languages" src="https://img.shields.io/github/languages/count/Sthaynny/flutter-nuvigator?color=%235963C5" />
+  <img alt="lastcommit" src="https://img.shields.io/github/last-commit/Sthaynny/flutter-nuvigator?color=%235761C3" />
+  <img alt="License" src="https://img.shields.io/github/license/Sthaynny/flutter-nuvigator?color=%235E69D7" />
+  <img alt="Issues" src="https://img.shields.io/github/issues/Sthaynny/flutter-nuvigator?color=%235965E0">
   <a href="mailto:igorsthaynny@gmail.com">
    <img alt="E-mail" src="https://img.shields.io/badge/-igorsthaynny%40gmail.com-%23525DCB" />
-  </a>+
+  </a>
 </p>
 
 <p align="center">
@@ -22,6 +22,7 @@
 <p align="center">Project developed to study Flutter</p>
 
 <hr />
+
 
 <div align="center">
   <sub> Made with 💖 by
@@ -51,7 +52,6 @@
 # :rocket: Technologies
 This project was made using the follow technologies:
 
-
 - `rootBundle`: reading data from a json file
 - `componentization`: the project's custom components are in the folder "components or widgets"
 - `color centering`: all as cores used in the app limit a file called app_colors which increases the customization power without much impact on the code logic.
@@ -62,7 +62,7 @@ This project was made using the follow technologies:
 
 ```bash
 # Clone Repository
-$ git clone https://github.com/Sthaynny/flutter_nuvigator_nested.git && cd flutter_nuvigator_nested
+$ git clone https://github.com/Sthaynny/flutter-nuvigator.git && cd flutter-nuvigator
 
 # Install Dependencies
 $ flutter pub get
@@ -76,7 +76,7 @@ Go to device or web to see the application running.
 
 # :bug: Issues
 
-Create a <a href="https://github.com/Sthaynny/flutter_nuvigator_nested/issues">new issue report</a>, it will be an honor to be able to help you solve and further improve our application.
+Create a <a href="https://github.com/Sthaynny/flutter-nuvigator/issues">new issue report</a>, it will be an honor to be able to help you solve and further improve our application.
 
 # :sparkles: Contributing
 
